@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Super3",
-    "slug": "super3",
+    "name": "Vis",
+    "slug": "Vis",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
@@ -14,7 +14,8 @@
         "image": "./assets/images/splash.png",
         "resizeMode": "contain",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "scheme": "super3"
     },
     "web": {
       "bundler": "metro",

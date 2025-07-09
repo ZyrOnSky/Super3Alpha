@@ -53,6 +53,8 @@ export default function GameScreen() {
   const [opponentOnlyMode, setOpponentOnlyMode] = useState(false);
   const [opponentWinners, setOpponentWinners] = useState<OpponentWinnerModel[]>([]);
   const [winnerModalTriggeredForGameId, setWinnerModalTriggeredForGameId] = useState<string | null>(null);
+  // Agregar estado para guardar los ganadores principales
+  const [mainWinners, setMainWinners] = useState<WinnerModel[]>([]);
 
   const stats = getTableStats();
 
@@ -198,6 +200,17 @@ export default function GameScreen() {
 
       if (gamePhase === 'main') {
         setMainWinAmount(amount);
+        // Guardar los ganadores principales antes de pasar al secundario
+        const winners = winningTables.map(table => ({
+          id: Date.now().toString() + Math.random(),
+          gameId: currentGame.id,
+          table,
+          winningAmount: amount / winningTables.length,
+          gameType: 'main',
+          isPlayerWinner: true,
+          createdAt: new Date(),
+        }));
+        setMainWinners(winners);
         proceedToSecondaryLottery(amount);
       } else {
         finishSecondaryGame(amount);
@@ -258,19 +271,11 @@ export default function GameScreen() {
   };
 
   const finishSecondaryGame = async (secondaryWinAmount: number) => {
-    const winners: WinnerModel[] = [];
-    
-    // Add main game winners if any
-    if (mainWinAmount > 0 && winningTables.length > 0) {
-      winners.push(...winningTables.map(table => ({
-        id: Date.now().toString() + Math.random(),
-        gameId: currentGame!.id,
-        table,
-        winningAmount: mainWinAmount / winningTables.length,
-        gameType: 'main' as const,
-        isPlayerWinner: true,
-        createdAt: new Date(),
-      })));
+    let winners: WinnerModel[] = [];
+
+    // Usar los ganadores principales guardados si existen
+    if (mainWinners.length > 0) {
+      winners = [...mainWinners];
     }
 
     // Add secondary game winner if any
@@ -297,6 +302,7 @@ export default function GameScreen() {
     setWinningAmount('');
     setGamePhase('main');
     setMainWinAmount(0);
+    setMainWinners([]); // Limpiar ganadores principales
     setWinningTables([]);
     setDrawnHistory([]);
     setUndoHistory([]);
