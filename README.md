@@ -1,6 +1,8 @@
 # Super3Alpha
 
-Super3Alpha es una aplicación móvil desarrollada con React Native y Expo, diseñada específicamente para la gestión y seguimiento de partidas del juego de azar "Super 3". Esta aplicación ofrece una experiencia completa y profesional para todos aquellos que disfrutan de este juego, proporcionando herramientas avanzadas para el registro, análisis y gestión de sus partidas.
+Super3Alpha se trata de una aplicación móvil desarrollada con React Native y Expo, diseñada específicamente para la gestión y seguimiento de partidas del juego de azar "Super 3". Esta aplicació  proporciona herramientas avanzadas para el registro, análisis y gestión de las partidas.
+
+> **Nota:** Las funcionalidades que dependen de SQLite están optimizadas para dispositivos móviles (Android/iOS) y ofrecen el mejor rendimiento en esta plataforma, de  hecho NO funciona como Aplicacion Web, debido a que fue Desarrollada Especificamente para Android.
 
 ## Características principales
 
@@ -56,9 +58,9 @@ Super3Alpha es una aplicación móvil desarrollada con React Native y Expo, dise
    ```sh
    npx expo start
    ```
-4. Escanea el código QR con la app Expo Go en tu dispositivo móvil para probar la aplicación.
+4. Entonces se escanea el código QR con la app Expo Go en tu dispositivo móvil para probar la aplicación.
 
-> **Nota:** Las funcionalidades que dependen de SQLite están optimizadas para dispositivos móviles (Android/iOS) y ofrecen el mejor rendimiento en estas plataformas.
+
 
 ## Estructura del proyecto
 
@@ -78,8 +80,8 @@ La aplicación Super3Alpha se destaca por su **funcionamiento excepcional** y **
 - **Interfaz intuitiva**: Diseño que permite a los usuarios aprovechar todas las funcionalidades sin necesidad de aprendizaje previo
 - **Estabilidad**: Aplicación probada y optimizada para funcionar de manera consistente en diferentes dispositivos
 
-El código fuente está estructurado de manera profesional, siguiendo las mejores prácticas de desarrollo en React Native, lo que garantiza su mantenibilidad y escalabilidad.
+El código fuente está estructurado de manera profesional, siguiendo las mejores prácticas de desarrollo en React Native, lo que garantiza su mantenibilidad y escalabilidad y se ha testeado robustamente hasta cumplir con todos sus reqerimientos funcionales, ha demas ha sido una gratificante experiencia de desarrollo.
 
 ---
 
-Desarrollado con pasión y dedicación para ofrecer la mejor experiencia en gestión de partidas de Super 3. 
+Con el fin de ampliar mis conocimientos y ofrecer una variedad mas grande de productos, recibir consejos y seguir mejorando como desarrollador de aplicaciones web :)
